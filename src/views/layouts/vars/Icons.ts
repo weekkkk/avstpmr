@@ -1,0 +1,6 @@
+export const IconVK: string = require('@/assets/images/social/icon-vk.png')
+export const IconViber: string = require('@/assets/images/social/icon-viber.png')
+export const IconOdnoklassniki: string = require('@/assets/images/social/icon-odnoklassniki.png')
+export const IconInstagram: string = require('@/assets/images/social/icon-instagram.png')
+export const IconFacebook: string = require('@/assets/images/social/icon-facebook.png')
+export const IconGoogleMaps: string = require('@/assets/images/icon-google-maps.png')

@@ -1,5 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/router'
 
-createApp(App).use(router).mount('#app')
+import uiLink from '@/views/components/ui-link/ui-link.vue'
+
+const app = createApp(App)
+
+app.component('ui-link', uiLink)
+
+app.use(router).mount('#app')
