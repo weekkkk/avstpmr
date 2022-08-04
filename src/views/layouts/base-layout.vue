@@ -24,6 +24,7 @@ export default class BaseLayoutComponent extends Vue {}
 @container-max-width: 1024px;
 @container-padding-x: 32px;
 @container-padding-y: 32px;
+@header-height: 64px;
 
 .layout {
   display: flex;
@@ -38,6 +39,7 @@ export default class BaseLayoutComponent extends Vue {}
     text-align: center;
     max-width: @container-max-width;
     padding: @container-padding-y @container-padding-x;
+    padding-top: calc(@container-padding-y + @header-height);
   }
 }
 </style>

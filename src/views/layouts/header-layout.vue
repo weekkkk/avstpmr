@@ -100,12 +100,17 @@ export default class HeaderLayoutComponent extends Vue {
 @icon-height: 32px;
 @icon-indent: 12px;
 @container-max-width: 1024px;
+@bg-color: var(--avstpmr-white);
 
 .header {
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 1000;
   box-shadow: @box-shadow;
+  background-color: @bg-color;
   .container {
     display: flex;
     justify-content: space-between;

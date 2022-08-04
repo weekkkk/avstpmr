@@ -14,6 +14,7 @@
 @import "@/assets/styles/border-radius.less";
 @import "@/assets/styles/shadow.less";
 @import "@/assets/styles/color.less";
+@import "@/assets/styles/indent.less";
 
 * {
   padding: 0;
