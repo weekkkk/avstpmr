@@ -15,7 +15,9 @@
 @import "@/assets/styles/shadow.less";
 @import "@/assets/styles/color.less";
 @import "@/assets/styles/indent.less";
-
+html {
+  color: var(--avstpmr-black);
+}
 * {
   padding: 0;
   margin: 0;

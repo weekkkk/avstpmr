@@ -13,7 +13,7 @@
     </div>
     <div class="links">
       <div class="container">
-        <div class="list f a-c j-s">
+        <div class="list f f-w a-c j-s">
           <ui-link
             class="link p c-dark-blue"
             v-for="(link, index) in links"
@@ -42,6 +42,7 @@
 import { Options, Vue } from "vue-property-decorator";
 import LinkModel from "../components/ui-link/models/LinkModel";
 import { IconGoogleMaps } from "./vars/Icons";
+import { ADVERTISING_AND_RENTAL_PAGE } from "../../router/routerNames";
 @Options({
   name: "footer-layout",
 })
@@ -59,7 +60,7 @@ export default class FooterLayoutComponent extends Vue {
         Text: "Правила покупки<br>и возврата билетов",
         Name: "Name",
       }),
-      new LinkModel({ Text: "Новости", Name: "Name" }),
+      new LinkModel({ Text: "Новости", Name: ADVERTISING_AND_RENTAL_PAGE }),
       new LinkModel({ Text: "Реклама и аренда", Name: "Name" }),
       new LinkModel({ Text: "Правила перевозок", Name: "Name" }),
       new LinkModel({ Text: "Документация", Name: "Name" })
@@ -83,6 +84,7 @@ export default class FooterLayoutComponent extends Vue {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  bottom: 0;
 
   > * {
     display: flex;

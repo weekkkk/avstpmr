@@ -11,5 +11,8 @@ app.component('ui-link', uiLink)
 import uiButton from '@/views/components/ui-button/ui-button.vue'
 app.component('ui-button', uiButton)
 
+import uiListBlock from '@/views/components/ui-list-block/ui-list-block.vue'
+app.component('ui-list-block', uiListBlock)
+
 
 app.use(router).mount('#app')

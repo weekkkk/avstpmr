@@ -34,8 +34,9 @@ export default class BaseLayoutComponent extends Vue {}
   height: 100vh;
 
   .container {
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: auto;
     text-align: center;
     max-width: @container-max-width;
     padding: @container-padding-y @container-padding-x;
