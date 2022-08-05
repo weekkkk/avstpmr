@@ -31,16 +31,19 @@ export default class BaseLayoutComponent extends Vue {}
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   .container {
     display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     text-align: center;
     max-width: @container-max-width;
     padding: @container-padding-y @container-padding-x;
-    padding-top: calc(@container-padding-y + @header-height);
+
+    @media (max-width: 768px) {
+      padding: calc(@container-padding-y * 0.75) calc(@container-padding-x / 2);
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="main-page">
+  <div class="main-page w-100 f d-c">
     <ui-video-banner class="banner">
       <div class="f a-s d-c">
         <h1 class="bold c-white align-l mb-4">

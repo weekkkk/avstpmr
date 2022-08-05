@@ -4,9 +4,9 @@
     <div class="icon" v-else-if="icon">
       <img class="icon" :src="icon" alt="" />
     </div>
-    <div class="text f d-c j-b regular align-l">
+    <div class="text f d-c j-b regular align-j">
       <slot></slot>
-      <div class="important bold c-dark-blue align-l" v-if="important">
+      <div class="important bold c-dark-blue align-j" v-if="important">
         <br />
         {{ important }}
       </div>

@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="go-to-map">
       <div class="container">
-        <div class="map f a-c j-c sh-base br-base">
+        <div class="map f a-c j-c sh-base br-base f-w">
           <h3 class="bold c-black">Кассы автостанций</h3>
           <div class="arrow"></div>
           <div class="map-icon">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="info">
-      <div class="container c-white">
+      <div class="container c-white f-w">
         <p>ОАО “Автостанции Приднестровья”</p>
         <p>
           3300-MD,<br />

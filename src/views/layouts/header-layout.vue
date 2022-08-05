@@ -1,5 +1,6 @@
 <template>
-  <div class="header">
+  <div class="pseudo-header" :style="pseudoHeaderStyles"></div>
+  <div class="header" ref="header">
     <div class="container">
       <div class="left f a-c">
         <img src="" alt="logo" class="logo" />
@@ -50,8 +51,18 @@ export default class HeaderLayoutComponent extends Vue {
   links: LinkModel[] = [];
   socialLinks: LinkModel[] = [];
 
+  headerHeight = 0;
+
+  $refs: {
+    header: HTMLElement;
+  };
+
   created() {
     this.initLinks();
+  }
+  mounted() {
+    this.setHeaderHeight();
+    window.addEventListener("resize", this.setHeaderHeight);
   }
 
   initLinks() {
@@ -87,6 +98,20 @@ export default class HeaderLayoutComponent extends Vue {
         Image: IconFacebook,
       })
     );
+  }
+
+  setHeaderHeight() {
+    this.headerHeight = this.$refs.header.clientHeight;
+  }
+  get pseudoHeaderStyles() {
+    return [
+      { minHeight: `${this.headerHeight}px` },
+      { maxHeight: `${this.headerHeight}px` },
+    ];
+  }
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.setHeaderHeight);
   }
 }
 </script>
