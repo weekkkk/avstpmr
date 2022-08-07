@@ -1,6 +1,6 @@
 <template>
   <div class="ui-list-block sh-base br-base f a-s">
-    <div class="number f a-c j-c c-white" v-if="number">{{ number }}</div>
+    <div class="number f a-c j-c c-white medium" v-if="number">{{ number }}</div>
     <div class="icon" v-else-if="icon">
       <img class="icon" :src="icon" alt="" />
     </div>
