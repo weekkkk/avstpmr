@@ -1,0 +1,1 @@
+export const Share = require('@/assets/images/link-gray.png')

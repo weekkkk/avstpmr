@@ -4,7 +4,7 @@
       <img v-if="image" :src="image" />
       <slot></slot>
     </a>
-    <a v-else-if="href" :target="target" :href="href">
+    <a v-else-if="href" :target="target" :href="href" :download="isDownload">
       <img v-if="image" :src="image" />
       <div v-else><slot></slot></div>
     </a>
@@ -28,6 +28,8 @@ export default class UiLinkComponent extends Vue {
   target: string;
   @Prop({ default: "" })
   image: string;
+  @Prop({ default: false })
+  isDownload: boolean;
 
   goToPage() {
     if (this.name) this.$router.push({ name: this.name });
