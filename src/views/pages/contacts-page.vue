@@ -4,27 +4,224 @@
     <div class="block">
       <h3 class="medium is-adaptive align-c">Сотрудники</h3>
       <div class="cards">
-        
+        <ui-card
+          class="card br-base sh-base"
+          v-for="(card, index) in employeesСards"
+          :key="index"
+          :subtitle="card.Subtitle"
+          :image="card.Image"
+          :title="card.Title"
+          :links="card.Links"
+          :description="card.Description"
+          :imageType="card.ImageType"
+        />
       </div>
+    </div>
+    <div class="block">
+      <h3 class="medium is-adaptive align-c">Автостанции</h3>
       <div class="cards">
-        
+        <ui-card
+          class="card br-base sh-base"
+          v-for="(card, index) in stationsСards"
+          :key="index"
+          :subtitle="card.Subtitle"
+          :image="card.Image"
+          :title="card.Title"
+          :links="card.Links"
+          :description="card.Description"
+          :imageType="card.ImageType"
+        />
+      </div>
+    </div>
+    <div class="block">
+      <h3 class="medium is-adaptive align-c">Диспетчерско-кассовые пункты</h3>
+      <div class="cards">
+        <ui-card
+          class="card br-base sh-base"
+          v-for="(card, index) in dispatchСards"
+          :key="index"
+          :subtitle="card.Subtitle"
+          :image="card.Image"
+          :title="card.Title"
+          :links="card.Links"
+          :description="card.Description"
+          :imageType="card.ImageType"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {Options, Vue} from 'vue-property-decorator'
+import { Options, Vue } from "vue-property-decorator";
+import uiCard from "../components/ui-card/ui-card.vue";
+import CardSettingsModel from "../components/ui-card/models/CardSettingsModel";
+import CardImageType from "../components/ui-card/enums/CardImageType";
 
 @Options({
-name: 'contacts-page'
+  name: "contacts-page",
+  components: { uiCard },
 })
-
 export default class ContactsPageComponent extends Vue {
+  employeesСards: CardSettingsModel[] = [];
+  stationsСards: CardSettingsModel[] = [];
+  dispatchСards: CardSettingsModel[] = [];
 
+  created() {
+    this.initEmployeesСards();
+    this.initStationsСards();
+    this.initDispatchСards();
+  }
+
+  initEmployeesСards() {
+    this.employeesСards.push(
+      new CardSettingsModel({
+        Subtitle: "Директор",
+        Image: "",
+        Title: "Урсул Олеся Петровна",
+        Links: ["+373/533/9-57-53"],
+        Description: "Управление",
+      }),
+      new CardSettingsModel({
+        Subtitle: "Главный бухгалтер-начальник ФЭО",
+        Image: "",
+        Title: "Неделько Кристина Анатольевна",
+        Links: ["+373/533/8-15-03", "+373/533/9-45-11"],
+        Description: "Финансово-экономический отдел",
+      }),
+      new CardSettingsModel({
+        Subtitle: "Начальник ООП",
+        Image: "",
+        Title: "Евдокимова Валерия Ивановна",
+        Links: ["+373/533/9-55-60"],
+        Description: "Отдел организации перевозок",
+      }),
+      new CardSettingsModel({
+        Subtitle: "Начальник ОКиДО",
+        Image: "",
+        Title: "Федотова Ольга Викторовна",
+        Links: ["+373/533/8-01-18"],
+        Description: "Отдел кадрового и документационного обеспечения",
+      })
+    );
+    this.employeesСards = this.employeesСards.map((card) => {
+      card.ImageType = CardImageType.Circle;
+      return card;
+    });
+  }
+
+  initStationsСards() {
+    this.stationsСards.push(
+      new CardSettingsModel({
+        Subtitle: "г. Тирасполь",
+        Image: "",
+        Title: "Автостанция г. Тирасполь, ул. Ленина 59 «б»",
+        Links: ["+373/533/9-43-31"],
+        Description: "Начальник подразделения<br>Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Бендеры",
+        Image: "",
+        Title: "Автовокзал г. Бендеры, ул.Советская, 1",
+        Links: ["+373/552/2-65-96"],
+        Description: "Начальник подразделения<br>Черная Евгения Сергеевна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Тирасполь",
+        Image: "",
+        Title: "Автостанция г. Тирасполь, ул. Ленина 59 «б»",
+        Links: ["+373/533/9-43-31"],
+        Description: "Начальник подразделения<br>Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Бендеры",
+        Image: "",
+        Title: "Автовокзал г. Бендеры, ул.Советская, 1",
+        Links: ["+373/552/2-65-96"],
+        Description: "Начальник подразделения<brЧерная Евгения Сергеевна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Рыбница",
+        Image: "",
+        Title: "Автостанция г. Рыбница, ул.Вальченко 12/1",
+        Links: ["+373/555/4-14-09"],
+        Description: "Начальник подразделения<brТащилина Светлана Петровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Каменка",
+        Image: "",
+        Title: "Автостанция г. Каменка ул. Кирова, 157",
+        Links: ["+373/216/2-23-05"],
+        Description: "Начальник подразделения<br>Мазур Николай Васильевич",
+      })
+    );
+  }
+
+  initDispatchСards() {
+    this.dispatchСards.push(
+      new CardSettingsModel({
+        Subtitle: "г. Тирасполь",
+        Image: "",
+        Title:
+          'Диспетчерско-кассовый пункт "Центральный рынок" г. Тирасполь ул.Карла Маркса, 42',
+        Links: ["+373/533/5-00-40"],
+        Description: "Начальник подразделения<br>Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Тирасполь",
+        Image: "",
+        Title:
+          'Диспетчерско-кассовый пункт "Кицканы" г. Тирасполь, на правом берегу р. Днестр в районе моста',
+        Links: ["+373/552/2-65-96"],
+        Description: "Начальник подразделения<br>Черная Евгения Сергеевна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Слободзея",
+        Image: "",
+        Title:
+          'Диспетчерско-кассовый пункт "Слободзея", г. Слободзея ул.Ленина 99',
+        Links: ["+373/557/2-49-90"],
+        Description: "Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Днестровск",
+        Image: "",
+        Title:
+          'Диспетчерско-кассовый пункт "Днестровск" г. Днестровск, ул.Котовского, 4',
+        Links: ["+373/219/3-13-35"],
+        Description: "Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Слободзея",
+        Image: "",
+        Title:
+          'Диспетчерско-кассовый пункт "Первомайск" пос.Первомайск ул.Ленина, 105 «а»',
+        Links: ["+373/557/3-50-39"],
+        Description: "Кристева Елена Александровна",
+      }),
+      new CardSettingsModel({
+        Subtitle: "г. Слободзея",
+        Image: "",
+        Title: "Диспетчерско-кассовый пункт г. Дубоссары, ул. Ленина, 80 «б»",
+        Links: ["0/779/ 5-84-28"],
+        Description: "Руссу Яна Яковлевна",
+      })
+    );
+  }
 }
 </script>
 
 <style lang="less" scoped>
-
+@gap-cards: 16px;
+.cards {
+  display: flex;
+  flex-flow: wrap;
+  gap: @gap-cards;
+  .card {
+    width: calc(50% - @gap-cards);
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
 </style>

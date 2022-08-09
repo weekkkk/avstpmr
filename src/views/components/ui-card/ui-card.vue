@@ -1,18 +1,20 @@
 <template>
   <div class="ui-card">
-    <div class="sub title p is-adaptive regular">
+    <div class="sub title p is-adaptive regula c-gray">
       {{ subtitle }}
     </div>
-    <div class="image" :class="ImageTypeClass" :style="ImageStyles"></div>
-    <div class="title h3">{{ title }}</div>
-    <div
-      class="link p is-adaptive dark-blue"
-      v-for="(link, index) in links"
-      :key="index"
-    >
-      {{ link }}
+    <div class="image br-base" :class="ImageTypeClass" :style="ImageStyles"></div>
+    <div class="title h3 medium is-adaptive c-black">{{ title }}</div>
+    <div class="links f f-w">
+      <div
+        class="link p is-adaptive c-dark-blue medium"
+        v-for="(link, index) in links"
+        :key="index"
+      >
+        {{ link }}
+      </div>
     </div>
-    <div class="description capture regular">{{ description }}</div>
+    <div class="description capture regular c-gray" v-html="description"></div>
   </div>
 </template>
 
@@ -36,8 +38,8 @@ export default class UiCardComponent extends Vue {
   @Prop({ default: CardImageType.Rectangle })
   imageType: CardImageType;
 
-  get ImageStyles(): Object[] {
-    return [{ backgroundImage: `url(${this.image}})` }];
+  get ImageStyles() {
+    return [{ backgroundImage: `url(${this.image})` }];
   }
 
   get ImageTypeClass(): string {
@@ -56,6 +58,8 @@ export default class UiCardComponent extends Vue {
 <style lang="less" scoped>
 @gap: 8px;
 @padding: 16px 24px;
+@bg-color: var(--avstpmr-white);
+@image-height: 88px;
 
 .ui-card {
   display: flex;
@@ -63,7 +67,24 @@ export default class UiCardComponent extends Vue {
   align-items: center;
   gap: @gap;
   padding: @padding;
-
-  
+  background-color: @bg-color;
+  .image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--avstpmr-blue);
+    min-height: @image-height;
+    max-height: @image-height;
+    &.circle-type {
+      border-radius: 50%;
+      min-width: @image-height;
+      max-width: @image-height;
+    }
+    &.rectangle-type {
+      width: 100%;
+    }
+  }
+  .links {
+    gap: @gap;
+  }
 }
 </style>
