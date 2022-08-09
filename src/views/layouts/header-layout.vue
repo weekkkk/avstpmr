@@ -44,6 +44,8 @@ import {
   IconFacebook,
 } from "./vars/Icons";
 
+import { CONTACTS_PAGE } from "../../router/routerNames";
+
 @Options({
   name: "header-layout",
 })
@@ -68,7 +70,7 @@ export default class HeaderLayoutComponent extends Vue {
   initLinks() {
     this.links.push(
       new LinkModel({ Text: "Расписание рейсов", Name: "Name" }),
-      new LinkModel({ Text: "Контакты", Name: "Name" }),
+      new LinkModel({ Text: "Контакты", Name: CONTACTS_PAGE }),
       new LinkModel({ Text: "avstpmr@gmail.scom", Name: "Name" })
     );
     this.socialLinks.push(
