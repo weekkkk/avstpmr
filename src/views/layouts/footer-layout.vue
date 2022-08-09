@@ -42,7 +42,10 @@
 import { Options, Vue } from "vue-property-decorator";
 import LinkModel from "../components/ui-link/models/LinkModel";
 import { IconGoogleMaps } from "./vars/Icons";
-import { ADVERTISING_AND_RENTAL_PAGE } from "../../router/routerNames";
+import {
+  ADVERTISING_AND_RENTAL_PAGE,
+  RULES_ONLINE_PURCHASE_AND_RETURN_TICKETS_PAGE,
+} from "../../router/routerNames";
 @Options({
   name: "footer-layout",
 })
@@ -58,10 +61,13 @@ export default class FooterLayoutComponent extends Vue {
     this.links.push(
       new LinkModel({
         Text: "Правила покупки<br>и возврата билетов",
-        Name: "Name",
+        Name: RULES_ONLINE_PURCHASE_AND_RETURN_TICKETS_PAGE,
       }),
-      new LinkModel({ Text: "Новости", Name: ADVERTISING_AND_RENTAL_PAGE }),
-      new LinkModel({ Text: "Реклама и аренда", Name: "Name" }),
+      new LinkModel({ Text: "Новости", Name: "Name" }),
+      new LinkModel({
+        Text: "Реклама и аренда",
+        Name: ADVERTISING_AND_RENTAL_PAGE,
+      }),
       new LinkModel({ Text: "Правила перевозок", Name: "Name" }),
       new LinkModel({ Text: "Документация", Name: "Name" })
     );

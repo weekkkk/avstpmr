@@ -1,11 +1,7 @@
 <template>
-  <div class="ui-link">
-    <a v-if="path || name" @click="goToPage"><slot></slot></a>
-    <a
-      v-else-if="href"
-      :target="target"
-      :href="href"
-    >
+  <div class="ui-link" @click="goToPage">
+    <a v-if="path || name"><slot></slot></a>
+    <a v-else-if="href" :target="target" :href="href">
       <img v-if="image" :src="image" />
       <div v-else><slot></slot></div>
     </a>
@@ -41,7 +37,8 @@ export default class UiLinkComponent extends Vue {
 .ui-link {
   display: inline;
   cursor: pointer;
-  a, img {
+  a,
+  img {
     display: inline-flex;
     min-width: 100%;
     min-height: 100%;

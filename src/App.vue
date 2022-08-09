@@ -1,7 +1,7 @@
 <template>
-  <div class="app">
-    <router-view />
-  </div>
+  <!-- <div class="app"> -->
+  <router-view />
+  <!-- </div> -->
 </template>
 
 <style>
@@ -26,11 +26,12 @@ html {
   line-height: 24px;
   font-family: "Montserrat", sans-serif;
 }
+
+html,
+body,
+#app,
 .app {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: fit-content;
+  width: 100%;
 }
 </style>

@@ -31,7 +31,7 @@ export default class BaseLayoutComponent extends Vue {}
   flex-direction: column;
   align-items: center;
   width: 100%;
-  // height: 100%;
+  height: 100%;
 
   .container {
     display: flex;
