@@ -25,7 +25,6 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-property-decorator";
-// import ListBlockModel from "../components/ui-list-block/models/ListBlockModel";
 import LinkModel from "../components/ui-link/models/LinkModel";
 
 import { Share } from "./vars/Icons";
