@@ -8,12 +8,15 @@
       <div class="right f a-c">
         <div class="links f a-c">
           <ui-link
-            class="link p c-dark-blue"
+            class="link p"
             v-for="(link, index) in links"
             :key="index"
             :name="link.Name"
+            :href="link.Link"
           >
-            {{ link.Text }}
+            <span class="c-dark-blue" style="text-decoration: none">
+              {{ link.Text }}
+            </span>
           </ui-link>
         </div>
         <div class="socials f a-c">
@@ -76,7 +79,10 @@ export default class HeaderLayoutComponent extends Vue {
     this.links.push(
       new LinkModel({ Text: "Расписание рейсов", Name: "Name" }),
       new LinkModel({ Text: "Контакты", Name: CONTACTS_PAGE }),
-      new LinkModel({ Text: "avstpmr@gmail.scom", Name: "Name" })
+      new LinkModel({
+        Text: "avstpmr@gmail.scom",
+        Link: "mailto:avstpmr@gmail.scom",
+      })
     );
     this.socialLinks.push(
       new LinkModel({

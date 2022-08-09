@@ -60,7 +60,7 @@ const routes: Array<RouteRecordRaw> = [
         component: NewsPage,
       },
       {
-        path: `/${ONE_NEWS_PAGE}:id`,
+        path: `/${ONE_NEWS_PAGE}/:id`,
         name: ONE_NEWS_PAGE,
         component: OneNewsPage,
       }

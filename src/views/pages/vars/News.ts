@@ -1,0 +1,1 @@
+export const NewsId_1 = require("@/static/news/Новый сайт и онлайн-продажа билетов на регулярные маршруты.json")
