@@ -46,6 +46,7 @@ import {
   ADVERTISING_AND_RENTAL_PAGE,
   RULES_ONLINE_PURCHASE_AND_RETURN_TICKETS_PAGE,
   DOCUMENTS_PAGE,
+  NEWS_PAGE,
 } from "../../router/routerNames";
 @Options({
   name: "footer-layout",
@@ -64,7 +65,7 @@ export default class FooterLayoutComponent extends Vue {
         Text: "Правила покупки<br>и возврата билетов",
         Name: RULES_ONLINE_PURCHASE_AND_RETURN_TICKETS_PAGE,
       }),
-      new LinkModel({ Text: "Новости", Name: "Name" }),
+      new LinkModel({ Text: "Новости", Name: NEWS_PAGE }),
       new LinkModel({
         Text: "Реклама и аренда",
         Name: ADVERTISING_AND_RENTAL_PAGE,

@@ -9,7 +9,9 @@ import {
   ADVERTISING_AND_RENTAL_PAGE,
   RULES_ONLINE_PURCHASE_AND_RETURN_TICKETS_PAGE,
   CONTACTS_PAGE,
-  DOCUMENTS_PAGE
+  DOCUMENTS_PAGE,
+  NEWS_PAGE,
+  ONE_NEWS_PAGE
 } from './routerNames'
 
 // Pages
@@ -18,6 +20,8 @@ import AdvertisingAndRentalPage from '@/views/pages/advertising-and-rental-page.
 import RulesOnlineRurchaseAndReturnTicketsPage from '@/views/pages/rules-online-purchase-and-return-tickets-page.vue'
 import ContactsPage from '@/views/pages/contacts-page.vue'
 import DocumentsPage from '@/views/pages/documents-page.vue'
+import NewsPage from '@/views/pages/news-page.vue'
+import OneNewsPage from '@/views/pages/one-news-page.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -49,6 +53,16 @@ const routes: Array<RouteRecordRaw> = [
         path: `/${DOCUMENTS_PAGE}`,
         name: DOCUMENTS_PAGE,
         component: DocumentsPage,
+      },
+      {
+        path: `/${NEWS_PAGE}`,
+        name: NEWS_PAGE,
+        component: NewsPage,
+      },
+      {
+        path: `/${ONE_NEWS_PAGE}:id`,
+        name: ONE_NEWS_PAGE,
+        component: OneNewsPage,
       }
     ]
   }
