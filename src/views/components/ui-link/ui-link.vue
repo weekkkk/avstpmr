@@ -1,6 +1,9 @@
 <template>
   <div class="ui-link" @click="goToPage">
-    <a v-if="path || name"><slot></slot></a>
+    <a v-if="path || name">
+      <img v-if="image" :src="image" />
+      <slot></slot>
+    </a>
     <a v-else-if="href" :target="target" :href="href">
       <img v-if="image" :src="image" />
       <div v-else><slot></slot></div>

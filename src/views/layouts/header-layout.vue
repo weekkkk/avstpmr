@@ -3,7 +3,7 @@
   <div class="header" ref="header">
     <div class="container">
       <div class="left f a-c">
-        <img src="" alt="logo" class="logo" />
+        <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name" />
       </div>
       <div class="right f a-c">
         <div class="links f a-c">
@@ -37,6 +37,7 @@ import { Options, Vue } from "vue-property-decorator";
 import LinkModel from "../components/ui-link/models/LinkModel";
 
 import {
+  Logo,
   IconVK,
   IconViber,
   IconOdnoklassniki,
@@ -44,12 +45,16 @@ import {
   IconFacebook,
 } from "./vars/Icons";
 
-import { CONTACTS_PAGE } from "../../router/routerNames";
+import { MAIN_PAGE, CONTACTS_PAGE } from "../../router/routerNames";
 
 @Options({
   name: "header-layout",
 })
 export default class HeaderLayoutComponent extends Vue {
+  logoLink: LinkModel = new LinkModel({
+    Image: Logo,
+    Name: MAIN_PAGE,
+  });
   links: LinkModel[] = [];
   socialLinks: LinkModel[] = [];
 
@@ -146,6 +151,11 @@ export default class HeaderLayoutComponent extends Vue {
     padding: @padding-y @padding-x;
     .left {
       color: var(--avstpmr-black);
+
+      .logo {
+        height: 32px;
+        width: 32px;
+      }
     }
     .right {
       .links {
