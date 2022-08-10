@@ -31,6 +31,19 @@
           </ui-link>
         </div>
       </div>
+      <div class="burger" @click="onMenu">
+        <svg
+          width="24"
+          height="14"
+          viewBox="0 0 24 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="24" height="2" rx="1" fill="#C4BDBD" />
+          <rect y="6" width="24" height="2" rx="1" fill="#C4BDBD" />
+          <rect y="12" width="24" height="2" rx="1" fill="#C4BDBD" />
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +65,7 @@ import { MAIN_PAGE, CONTACTS_PAGE } from "../../router/routerNames";
 
 @Options({
   name: "header-layout",
+  emits: ["onMenu"],
 })
 export default class HeaderLayoutComponent extends Vue {
   logoLink: LinkModel = new LinkModel({
@@ -73,6 +87,10 @@ export default class HeaderLayoutComponent extends Vue {
   mounted() {
     this.setHeaderHeight();
     window.addEventListener("resize", this.setHeaderHeight);
+  }
+
+  onMenu() {
+    this.$emit("onMenu");
   }
 
   initLinks() {
@@ -152,6 +170,7 @@ export default class HeaderLayoutComponent extends Vue {
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: @container-max-width;
     padding: @padding-y @padding-x;
@@ -164,6 +183,10 @@ export default class HeaderLayoutComponent extends Vue {
       }
     }
     .right {
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       .links {
         padding: 0 @links-indent;
         .link {
@@ -186,6 +209,20 @@ export default class HeaderLayoutComponent extends Vue {
             margin-right: @icon-indent;
           }
         }
+      }
+    }
+    .burger {
+      display: grid;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(110%);
+      }
+      &:active {
+        filter: brightness(90%);
+      }
+      @media (min-width: 768px) {
+        display: none;
       }
     }
   }

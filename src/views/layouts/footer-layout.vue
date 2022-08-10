@@ -3,8 +3,21 @@
     <div class="go-to-map">
       <div class="container">
         <div class="map f a-c j-c sh-base br-base f-w">
-          <h3 class="bold c-black">Кассы автостанций</h3>
-          <div class="arrow"></div>
+          <h3 class="bold c-black align-c">Кассы автостанций</h3>
+          <div class="arrow">
+            <svg
+              width="64"
+              height="60"
+              viewBox="0 0 64 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 26C1.79086 26 0 27.7909 0 30C0 32.2091 1.79086 34 4 34V26ZM62.8284 32.8284C64.3905 31.2663 64.3905 28.7337 62.8284 27.1716L37.3726 1.71573C35.8105 0.153632 33.2778 0.153632 31.7157 1.71573C30.1536 3.27783 30.1536 5.81049 31.7157 7.37258L54.3431 30L31.7157 52.6274C30.1536 54.1895 30.1536 56.7222 31.7157 58.2843C33.2778 59.8464 35.8105 59.8464 37.3726 58.2843L62.8284 32.8284ZM4 34H60V26H4V34Z"
+                fill="#A0D8F1"
+              />
+            </svg>
+          </div>
           <div class="map-icon">
             <img class="icon" :src="IconGoogleMaps" alt="Map" />
           </div>
@@ -92,7 +105,6 @@ export default class FooterLayoutComponent extends Vue {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  bottom: 0;
 
   > * {
     display: flex;
@@ -117,11 +129,10 @@ export default class FooterLayoutComponent extends Vue {
       width: 100%;
       background-color: var(--avstpmr-white);
       padding: @container-padding;
+      gap: @map-indent;
 
-      * > {
-        &:not(:last-child) {
-          margin-right: @map-indent;
-        }
+      .arrow {
+        display: grid;
       }
 
       .map-icon {
@@ -130,6 +141,13 @@ export default class FooterLayoutComponent extends Vue {
         min-height: @map-icon-height;
         max-width: @map-icon-height;
         min-width: @map-icon-height;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        .arrow {
+          transform: rotate(90deg);
+        }
       }
     }
   }

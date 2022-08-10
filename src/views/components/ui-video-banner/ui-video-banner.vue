@@ -21,6 +21,7 @@ export default class UiVideoBannerComponent extends Vue {}
 </script>
 
 <style lang="less" scoped>
+@padding: 16px;
 .ui-video-banner {
   width: 100%;
   height: 300px;
@@ -41,6 +42,7 @@ export default class UiVideoBannerComponent extends Vue {}
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    padding: @padding;
   }
 }
 </style>

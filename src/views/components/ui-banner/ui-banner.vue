@@ -5,7 +5,7 @@
     </div>
     <div class="title h3 bold is-adaptive" v-html="title"></div>
     <div class="description p regular is-adaptive">
-      {{ title }}
+      {{ description }}
     </div>
   </div>
 </template>

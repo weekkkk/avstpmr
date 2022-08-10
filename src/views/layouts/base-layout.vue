@@ -1,10 +1,11 @@
 <template>
   <div class="layout">
-    <header-layout />
-    <div class="container">
+    <header-layout v-if="!menuVisible" @onMenu="onMenu" />
+    <div class="container" v-if="!menuVisible">
       <router-view />
     </div>
-    <footer-layout />
+    <footer-layout v-if="!menuVisible" />
+    <menu-layout v-if="menuVisible" @onMenu="onMenu" />
   </div>
 </template>
 
@@ -12,12 +13,19 @@
 import { Options, Vue } from "vue-property-decorator";
 import headerLayout from "./header-layout.vue";
 import footerLayout from "./footer-layout.vue";
+import menuLayout from "./menu-layout.vue";
 
 @Options({
-  components: { headerLayout, footerLayout },
+  components: { headerLayout, footerLayout, menuLayout },
   name: "base-layout",
+  emits: ["onMenu"],
 })
-export default class BaseLayoutComponent extends Vue {}
+export default class BaseLayoutComponent extends Vue {
+  menuVisible = false;
+  onMenu() {
+    this.menuVisible = !this.menuVisible;
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -30,15 +38,15 @@ export default class BaseLayoutComponent extends Vue {}
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: fit-content;
+  min-height: 100vh;
   width: 100%;
 
   .container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
     text-align: center;
+    flex-grow: 1;
+    width: 100%;
     max-width: @container-max-width;
     padding: @container-padding-y @container-padding-x;
 

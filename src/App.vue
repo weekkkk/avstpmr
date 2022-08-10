@@ -27,11 +27,11 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
-html,
+/* html,
 body,
-#app,
-.app {
+#app {
+  min-height: fit-content;
   height: 100%;
   width: 100%;
-}
+} */
 </style>
