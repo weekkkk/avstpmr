@@ -3,7 +3,12 @@
     <div class="close medium" @click="onMenu">+</div>
     <div class="container f d-c">
       <div class="top f d-c a-c">
-        <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name" />
+        <div class="logo-box">
+          <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name" />
+          <ui-link class="h4 bold align-c" :name="logoLink.Name">
+            Автостанции<br />Приднестровья</ui-link
+          >
+        </div>
       </div>
       <div class="bottom f d-c a-c">
         <div class="socials f a-c">
@@ -115,6 +120,7 @@ export default class MenuLayoutComponent extends Vue {
 @bg-color: var(--avstpmr-white);
 @icon-height: 32px;
 @icon-indent: 12px;
+@logo-height: 84px;
 
 .menu {
   position: fixed;
@@ -125,7 +131,7 @@ export default class MenuLayoutComponent extends Vue {
   background-color: @bg-color;
   display: flex;
   overflow: auto;
-  
+
   .close {
     position: absolute;
     top: 8px;
@@ -135,7 +141,7 @@ export default class MenuLayoutComponent extends Vue {
     transform: rotate(45deg);
     cursor: pointer;
     color: var(--avstpmr-gray);
-    
+
     &:hover {
       filter: brightness(110%);
     }
@@ -147,12 +153,23 @@ export default class MenuLayoutComponent extends Vue {
   .container {
     gap: 16px;
     padding: 16px;
-    .logo {
-      display: grid;
-      min-height: @icon-height;
-      max-height: @icon-height;
-      min-width: @icon-height;
-      max-width: @icon-height;
+    .logo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      .logo {
+        display: grid;
+        // min-height: @logo-height;
+        // max-height: @logo-height;
+        min-width: @logo-height;
+        max-width: @logo-height;
+      }
+
+      .p {
+        line-height: 20px;
+      }
     }
     .bottom {
       gap: 16px;

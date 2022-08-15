@@ -45,6 +45,8 @@ export default class UiLinkComponent extends Vue {
   a,
   img {
     display: inline-flex;
+    align-items: center;
+    gap: 16px;
     min-width: 100%;
     min-height: 100%;
     max-width: 100%;

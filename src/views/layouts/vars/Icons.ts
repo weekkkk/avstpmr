@@ -1,4 +1,4 @@
-export const Logo: string = require('@/assets/images/social/icon-vk.png')
+export const Logo: string = require('@/assets/images/logo.svg')
 export const IconVK: string = require('@/assets/images/social/icon-vk.png')
 export const IconViber: string = require('@/assets/images/social/icon-viber.png')
 export const IconOdnoklassniki: string = require('@/assets/images/social/icon-odnoklassniki.png')

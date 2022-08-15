@@ -3,10 +3,14 @@
   <div class="header" ref="header">
     <div class="container">
       <div class="left f a-c">
-        <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name" />
+        <div class="logo-box">
+          <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name">
+            <p class="bold">Автостанции приднестровья</p>
+          </ui-link>
+        </div>
       </div>
       <div class="right f a-c">
-        <div class="links f a-c">
+        <div class="links f a-c f-w">
           <ui-link
             class="link p"
             v-for="(link, index) in links"
@@ -181,9 +185,18 @@ export default class HeaderLayoutComponent extends Vue {
     .left {
       color: var(--avstpmr-black);
 
-      .logo {
-        height: 32px;
-        width: 32px;
+      .logo-box {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 200px;
+        .logo {
+          height: 48px;
+          width: 48px;
+        }
+        p {
+          line-height: 20px;
+        }
       }
     }
     .right {
@@ -193,13 +206,12 @@ export default class HeaderLayoutComponent extends Vue {
 
       .links {
         padding: 0 @links-indent;
+        justify-content: flex-end;
+        column-gap: @links-indent;
         .link {
           display: inline-block;
           font-weight: 500;
           color: var(--avstpmr-dark-blue);
-        }
-        .link:not(:last-child) {
-          margin-right: @links-indent;
         }
       }
       .socials {
