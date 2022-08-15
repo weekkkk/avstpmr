@@ -3,7 +3,7 @@
     <div class="sub title p is-adaptive regula c-gray">
       {{ subtitle }}
     </div>
-    <div class="image br-base" :class="ImageTypeClass" :style="ImageStyles"></div>
+    <div class="image br-base" v-if="image" :class="ImageTypeClass" :style="ImageStyles"></div>
     <div class="title h3 medium is-adaptive c-black">{{ title }}</div>
     <div class="links f f-w">
       <div
