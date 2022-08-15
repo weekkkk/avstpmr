@@ -41,6 +41,7 @@ export default class UiButtonComponent extends Vue {
   border-radius: @boreder-radius;
   color: @color;
   padding: @padding-y @padding-x;
+  white-space: nowrap;
   &.red-bg {
     background-color: @red;
   }

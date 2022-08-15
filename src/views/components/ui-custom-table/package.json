@@ -1,0 +1,19 @@
+{
+  "name": "progressme-vue3-ui-custom-table",
+  "version": "1.0.0",
+  "description": "Кастомная таблица",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "set-registry": "npm set registry http://194.28.112.20:4873/"
+  },
+  "author": "Tirscript",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/progressme/progressme.git"
+  },
+  "dependencies": {
+    "vue": "^3.2.21"
+  }
+}
