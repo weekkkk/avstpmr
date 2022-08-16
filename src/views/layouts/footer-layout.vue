@@ -28,6 +28,7 @@
       <div class="container">
         <div class="list f f-w a-c j-s">
           <ui-link
+            @click="$emit('onLink')"
             class="link p c-dark-blue"
             v-for="(link, index) in links"
             :key="index"
@@ -126,6 +127,9 @@ export default class FooterLayoutComponent extends Vue {
     width: 100%;
     max-width: @container-max-width;
     padding: 0 @padding-x;
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
   }
 
   .go-to-map {
@@ -161,6 +165,10 @@ export default class FooterLayoutComponent extends Vue {
       width: calc(100% + @links-indent);
       margin: calc(@links-indent / 2 * -1);
       padding: @container-padding 0;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .link {
         display: inline-block;
         font-weight: 500;

@@ -45,6 +45,7 @@ export default class RulesOnlineRurchaseAndReturnTicketsPageComponent extends Vu
 
   created() {
     this.initBlocks();
+    window.scroll(0, 0);
   }
 
   initBlocks() {

@@ -71,6 +71,7 @@ export default class ContactsPageComponent extends Vue {
     this.initEmployeesСards();
     this.initStationsСards();
     this.initDispatchСards();
+    window.scroll(0, 0);
   }
 
   initEmployeesСards() {

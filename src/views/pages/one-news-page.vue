@@ -21,6 +21,7 @@ export default class OneNewsPageComponent extends Vue {
 
   created() {
     this.initNewsNumber();
+    window.scroll(0, 0);
   }
 
   initNewsNumber() {

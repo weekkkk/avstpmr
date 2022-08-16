@@ -120,6 +120,10 @@ export default class FlightScheduleComponent extends Vue {
       }),
     ],
   });
+
+  created() {
+    window.scroll(0, 0);
+  }
 }
 </script>
 

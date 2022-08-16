@@ -43,6 +43,7 @@ export default class DocumentsPageComponent extends Vue {
 
   created() {
     this.initDocumentLinks();
+    window.scroll(0, 0);
   }
 
   initDocumentLinks() {

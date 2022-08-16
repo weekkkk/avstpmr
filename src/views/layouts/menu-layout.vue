@@ -24,6 +24,7 @@
         </div>
         <div class="links f d-c a-l w-100">
           <ui-link
+            @click="link.Name ? onMenu() : ''"
             class="link p"
             v-for="(link, index) in links"
             :key="index"
@@ -37,12 +38,16 @@
         </div>
       </div>
     </div>
-    <footer-layout />
+    <footer-layout @onLink="onMenu" />
   </div>
 </template>
 
 <script lang="ts">
-import { CONTACTS_PAGE, MAIN_PAGE } from "@/router/routerNames";
+import {
+  CONTACTS_PAGE,
+  MAIN_PAGE,
+  FLIGHT_SCHEDULE_PAGE,
+} from "@/router/routerNames";
 import { Options, Vue } from "vue-property-decorator";
 import LinkModel from "../components/ui-link/models/LinkModel";
 import footerLayout from "./footer-layout.vue";
@@ -78,7 +83,7 @@ export default class MenuLayoutComponent extends Vue {
 
   initLinks() {
     this.links.push(
-      new LinkModel({ Text: "Расписание рейсов", Name: "Name" }),
+      new LinkModel({ Text: "Расписание рейсов", Name: FLIGHT_SCHEDULE_PAGE }),
       new LinkModel({ Text: "Контакты", Name: CONTACTS_PAGE }),
       new LinkModel({
         Text: "avstpmr@gmail.scom",
@@ -140,6 +145,7 @@ export default class MenuLayoutComponent extends Vue {
     line-height: 24px;
     transform: rotate(45deg);
     cursor: pointer;
+    user-select: none;
     color: var(--avstpmr-gray);
 
     &:hover {

@@ -182,6 +182,9 @@ export default class HeaderLayoutComponent extends Vue {
     width: 100%;
     max-width: @container-max-width;
     padding: @padding-y @padding-x;
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+    }
     .left {
       color: var(--avstpmr-black);
 

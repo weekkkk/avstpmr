@@ -32,6 +32,7 @@ export default class NewsPageComponent extends Vue {
 
   created() {
     this.initNews();
+    window.scroll(0, 0);
   }
 
   initNews() {

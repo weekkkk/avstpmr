@@ -43,6 +43,7 @@ export default class AdvertisingAndRentalPageComponent extends Vue {
 
   created() {
     this.initListBlocks();
+    window.scroll(0, 0);
   }
 
   initListBlocks() {

@@ -130,6 +130,9 @@ export default class MainPageComponent extends Vue {
       }),
     ],
   });
+  created() {
+    window.scroll(0, 0);
+  }
 }
 </script>
 

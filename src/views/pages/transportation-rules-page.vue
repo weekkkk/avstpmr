@@ -3170,7 +3170,11 @@ import { Options, Vue } from "vue-property-decorator";
 @Options({
   name: "transportation-rules-page",
 })
-export default class TransportationRulesPageComponent extends Vue {}
+export default class TransportationRulesPageComponent extends Vue {
+  created() {
+    window.scroll(0, 0);
+  }
+}
 </script>
 
 <style lang="less" scoped>

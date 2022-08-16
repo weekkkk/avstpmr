@@ -37,7 +37,7 @@
         </span>
       </div>
       <div class="ceil button">
-        <ui-button>Купить билет</ui-button>
+        <ui-button class="pay">Купить билет</ui-button>
       </div>
     </div>
   </div>
@@ -159,9 +159,11 @@ export default class UiCustomTableComponent extends Vue {
       display: flex;
       flex-direction: column;
       box-shadow: var(--avstpmr-border-base-shadow);
-      overflow: hidden;
+      // overflow: hidden;
       border-radius: 8px;
+      position: relative;
       // padding: 8px;
+      margin-bottom: 56px;
 
       &.head {
         display: none;
@@ -173,10 +175,29 @@ export default class UiCustomTableComponent extends Vue {
         padding: 0 !important;
         background-color: @bg;
 
+        &:first-child {
+          overflow: hidden;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+        &:nth-last-child(-n + 2) {
+          overflow: hidden;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+
         &.button {
           display: flex;
           justify-content: center;
-          padding: 16px !important;
+          padding: 0 !important;
+          padding-top: 16px !important;
+          position: absolute;
+          background-color: transparent;
+          top: 100%;
+
+          .pay {
+            box-shadow: var(--avstpmr-border-base-shadow);
+          }
         }
 
         .data-capture {
