@@ -35,7 +35,7 @@ export default class UiListBlockComponent extends Vue {
 @gap: 16px;
 @icon-height: 32px;
 @number-bg: var(--avstpmr-red);
-@bg: var(--avst-white);
+@bg: var(--avstpmr-white);
 .ui-list-block {
   padding: @padding;
   gap: @gap;

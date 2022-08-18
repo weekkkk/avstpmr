@@ -1,5 +1,7 @@
 <template>
   <div class="layout">
+    <div class="bg-image"></div>
+    <div class="bg-color"></div>
     <header-layout v-if="!menuVisible" @onMenu="onMenu" />
     <div class="container" v-if="!menuVisible">
       <router-view />
@@ -40,7 +42,29 @@ export default class BaseLayoutComponent extends Vue {
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  position: relative;
 
+  .bg-image,
+  .bg-color {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .bg-image {
+    background-image: url("~@/assets/images/pages-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.075;
+    filter: blur(4px);
+    z-index: -2;
+  }
+  // .bg-color {
+  //   background: linear-gradient(45deg, var(--avstpmr-red), var(--avstpmr-blue));
+  //   opacity: 0.1;
+  //   z-index: -1;
+  // }
   .container {
     display: flex;
     flex-direction: column;
