@@ -1,0 +1,1 @@
+export const BackgroundPhoto = require('@/assets/images/banner-photo.jpg')

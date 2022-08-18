@@ -1,10 +1,11 @@
 <template>
   <div class="ui-video-banner">
-    <video
+    <!-- <video
       autoplay
       loop
       src="https://s3.eu-central-1.amazonaws.com/dev.progressme.ru/files/MarketplaceTeacherVideoPresentation/982d54e0-a0c4-41aa-97f7-c52c001a8cb1.mp4"
-    ></video>
+    ></video> -->
+    <img :src="BackgroundPhoto" />
     <div class="content f a-c j-c">
       <slot></slot>
     </div>
@@ -13,11 +14,13 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-property-decorator";
-
+import { BackgroundPhoto } from "./vars/Images";
 @Options({
   name: "ui-video-banner",
 })
-export default class UiVideoBannerComponent extends Vue {}
+export default class UiVideoBannerComponent extends Vue {
+  BackgroundPhoto = BackgroundPhoto;
+}
 </script>
 
 <style lang="less" scoped>
@@ -26,13 +29,29 @@ export default class UiVideoBannerComponent extends Vue {}
   width: 100%;
   height: 300px;
   position: relative;
+  overflow: hidden;
 
-  video {
+  video,
+  img {
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;
     min-width: 100%;
     min-height: 100%;
+    animation: backgroundMove 60s ease-in-out infinite;
+    filter: blur(2px);
+  }
+
+  @keyframes backgroundMove {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   .content {

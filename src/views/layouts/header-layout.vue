@@ -163,7 +163,7 @@ export default class HeaderLayoutComponent extends Vue {
 @links-indent: 16px;
 @icon-height: 32px;
 @icon-indent: 12px;
-@container-max-width: 1024px;
+@container-max-width: 1920px;
 @bg-color: var(--avstpmr-white);
 
 .header {

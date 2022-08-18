@@ -29,7 +29,7 @@ export default class BaseLayoutComponent extends Vue {
 </script>
 
 <style lang="less" scoped>
-@container-max-width: 1024px;
+@container-max-width: 1124px;
 @container-padding-x: 32px;
 @container-padding-y: 32px;
 @header-height: 64px;

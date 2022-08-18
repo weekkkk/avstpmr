@@ -100,7 +100,7 @@ export default class FooterLayoutComponent extends Vue {
 @padding-y: 16px;
 @footer-indent: 16px;
 @container-padding: 16px;
-@container-max-width: 1024px;
+@container-max-width: 1124px;
 @links-indent: 16px;
 @map-indent: 32px;
 @map-icon-height: 104px;
