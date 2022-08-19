@@ -5,7 +5,7 @@
       <div class="left f a-c">
         <div class="logo-box">
           <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name">
-            <p class="bold">Автостанции приднестровья</p>
+            <h4 class="bold">Автостанции Приднестровья</h4>
           </ui-link>
         </div>
       </div>
@@ -191,11 +191,11 @@ export default class HeaderLayoutComponent extends Vue {
       .logo-box {
         display: flex;
         align-items: center;
-        gap: 16px;
-        width: 200px;
+        gap: 32px;
+        // width: 200px;
         .logo {
-          height: 48px;
-          width: 48px;
+          height: 72px;
+          width: 72px;
         }
         p {
           line-height: 20px;

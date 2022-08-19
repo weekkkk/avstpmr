@@ -36,9 +36,9 @@
           {{ ceil.Title }}
         </span>
       </div>
-      <div class="ceil button">
+      <!-- <div class="ceil button">
         <ui-button class="pay">Купить билет</ui-button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

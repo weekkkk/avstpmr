@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="bg-image"></div>
-    <div class="bg-color"></div>
+    <!-- <div class="bg-color"></div> -->
     <header-layout v-if="!menuVisible" @onMenu="onMenu" />
     <div class="container" v-if="!menuVisible">
       <router-view />
