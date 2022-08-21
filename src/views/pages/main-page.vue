@@ -10,7 +10,7 @@
     </ui-video-banner>
     <div class="banner"></div>
     <div class="block">
-      <h3 class="medium is-adaptive align-l">Близжайшие рейсы</h3>
+      <h3 class="medium is-adaptive align-l">Текущее расписание рейсов</h3>
       <ui-table
         :customTableModel="scheduleTable"
         class="align-l sh-base p is-adaptive"

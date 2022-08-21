@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h2 class="align-l medium is-adaptive">Расписание рейсов</h2>
+    <h2 class="align-l medium is-adaptive">Текущее расписание рейсов</h2>
     <div class="block">
       <h3 class="medium is-adaptive align-c">Рейсы</h3>
       <ui-table
