@@ -41,7 +41,7 @@ export default class NewsPageComponent extends Vue {
         Id: 1,
         Subtitle: new Date().toDateString(),
         Title: "Новый сайт и онлайн-продажа билетов<br>на регулярные маршруты",
-        Description: "У автостинций Приднестровья появился собственный сайт",
+        Description: "",
       })
     );
   }

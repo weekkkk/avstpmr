@@ -39,7 +39,7 @@ export default class UiVideoBannerComponent extends Vue {
     min-width: 100%;
     min-height: 100%;
     animation: backgroundMove 60s ease-in-out infinite;
-    filter: blur(2px);
+    // filter: blur(2px);
   }
 
   @keyframes backgroundMove {
@@ -60,7 +60,7 @@ export default class UiVideoBannerComponent extends Vue {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     padding: @padding;
   }
 }

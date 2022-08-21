@@ -1,5 +1,6 @@
 <template>
-  <div class="ui-banner f d-c sh-base br-base c-white" :style="CardStyles">
+  <div class="ui-banner f d-c sh-base br-base c-white">
+    <!-- :style="cardStyles" -->
     <div class="subtitle p medium is-adaptive">
       {{ subtitle }}
     </div>
@@ -26,7 +27,7 @@ export default class UiBannerComponent extends Vue {
   @Prop({ default: "" })
   description: string;
 
-  get CardStyles() {
+  get cardStyles() {
     return [{ backgroundImage: `url(${this.image})` }];
   }
 }
@@ -35,13 +36,14 @@ export default class UiBannerComponent extends Vue {
 <style lang="less" scoped>
 @gap: 16px;
 @padding: 16px;
-@opacity: 0.25;
+@opacity: 0.75;
 .ui-banner {
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: url("@/assets/images/banner-photo.jpg");
   background-color: var(--avstpmr-blue);
   padding: @padding;
   gap: @gap;

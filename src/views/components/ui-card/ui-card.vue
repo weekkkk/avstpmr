@@ -14,7 +14,7 @@
         {{ link }}
       </div>
     </div>
-    <div class="description capture regular c-gray" v-html="description"></div>
+    <div class="description title capture regular c-gray" v-html="description"></div>
   </div>
 </template>
 
@@ -65,6 +65,7 @@ export default class UiCardComponent extends Vue {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: @gap;
   padding: @padding;
   background-color: @bg-color;
