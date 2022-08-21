@@ -60,11 +60,11 @@ export default class BaseLayoutComponent extends Vue {
     filter: blur(4px);
     z-index: -2;
   }
-  // .bg-color {
-  //   background: linear-gradient(45deg, var(--avstpmr-red), var(--avstpmr-blue));
-  //   opacity: 0.1;
-  //   z-index: -1;
-  // }
+  .bg-color {
+    background: linear-gradient(45deg, var(--avstpmr-red), var(--avstpmr-blue));
+    opacity: 0.1;
+    z-index: -1;
+  }
   .container {
     display: flex;
     flex-direction: column;

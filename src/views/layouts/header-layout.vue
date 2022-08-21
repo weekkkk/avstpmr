@@ -4,9 +4,9 @@
     <div class="container">
       <div class="left f a-c">
         <div class="logo-box">
-          <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name">
+          <!-- <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name">
             <h4 class="bold">Автостанции Приднестровья</h4>
-          </ui-link>
+          </ui-link> -->
         </div>
       </div>
       <div class="right f a-c">
