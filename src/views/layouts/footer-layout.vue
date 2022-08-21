@@ -46,6 +46,11 @@
           3300-MD,<br />
           г. Тирасполь ул. Ленина, 59 <br />
           тел. / факс: +373(533)95753
+          <ui-link class="link p" :key="index" href="mailto:avstpmr@gmail.com">
+            <span class="c-white" style="text-decoration: none">
+              avstpmr@gmail.com
+            </span>
+          </ui-link>
         </p>
       </div>
     </div>

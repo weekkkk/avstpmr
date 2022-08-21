@@ -106,8 +106,8 @@ export default class HeaderLayoutComponent extends Vue {
       new LinkModel({ Text: "Расписание рейсов", Name: FLIGHT_SCHEDULE_PAGE }),
       new LinkModel({ Text: "Контакты", Name: CONTACTS_PAGE }),
       new LinkModel({
-        Text: "avstpmr@gmail.scom",
-        Link: "mailto:avstpmr@gmail.scom",
+        Text: "avstpmr@gmail.com",
+        Link: "mailto:avstpmr@gmail.com",
       })
     );
     this.socialLinks.push(
