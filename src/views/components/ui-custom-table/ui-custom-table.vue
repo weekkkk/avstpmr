@@ -163,7 +163,7 @@ export default class UiCustomTableComponent extends Vue {
       border-radius: 8px;
       position: relative;
       // padding: 8px;
-      margin-bottom: 56px;
+      // margin-bottom: 56px;
 
       &.head {
         display: none;

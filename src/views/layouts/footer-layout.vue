@@ -3,22 +3,22 @@
     <div class="go-to-map">
       <div class="container">
         <div class="map f a-c j-c sh-base br-base f-w">
-          <h3 class="bold c-black align-c">Кассы автостанций</h3>
-          <div class="arrow">
+          <h3 class="bold c-black align-c" style="cursor: pointer" @click="onMap">Кассы автостанций</h3>
+          <div class="arrow" style="cursor: pointer" @click="onMap">
             <svg
-              width="64"
-              height="60"
-              viewBox="0 0 64 60"
+              width="94"
+              height="118"
+              viewBox="0 0 136 118"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M4 26C1.79086 26 0 27.7909 0 30C0 32.2091 1.79086 34 4 34V26ZM62.8284 32.8284C64.3905 31.2663 64.3905 28.7337 62.8284 27.1716L37.3726 1.71573C35.8105 0.153632 33.2778 0.153632 31.7157 1.71573C30.1536 3.27783 30.1536 5.81049 31.7157 7.37258L54.3431 30L31.7157 52.6274C30.1536 54.1895 30.1536 56.7222 31.7157 58.2843C33.2778 59.8464 35.8105 59.8464 37.3726 58.2843L62.8284 32.8284ZM4 34H60V26H4V34Z"
-                fill="#A0D8F1"
+                d="M8 51C3.58172 51 0 54.5817 0 59C0 63.4183 3.58172 67 8 67L8 51ZM133.657 64.6569C136.781 61.5327 136.781 56.4673 133.657 53.3431L82.7452 2.43146C79.621 -0.692737 74.5557 -0.692737 71.4315 2.43146C68.3073 5.55565 68.3073 10.621 71.4315 13.7452L116.686 59L71.4315 104.255C68.3073 107.379 68.3073 112.444 71.4315 115.569C74.5557 118.693 79.621 118.693 82.7452 115.569L133.657 64.6569ZM8 67L128 67V51L8 51L8 67Z"
+                fill="#E17628"
               />
             </svg>
           </div>
-          <div class="map-icon">
+          <div class="map-icon" @click="onMap">
             <img class="icon" :src="IconGoogleMaps" alt="Map" />
           </div>
         </div>
@@ -67,6 +67,7 @@ import {
   DOCUMENTS_PAGE,
   NEWS_PAGE,
   TRANSPORTATION_RULES_PAGE,
+  MAP_PAGE,
 } from "../../router/routerNames";
 @Options({
   name: "footer-layout",
@@ -77,6 +78,10 @@ export default class FooterLayoutComponent extends Vue {
 
   created() {
     this.initLinks();
+  }
+
+  onMap() {
+    this.$router.push({ name: MAP_PAGE });
   }
 
   initLinks() {
@@ -150,6 +155,7 @@ export default class FooterLayoutComponent extends Vue {
 
       .map-icon {
         display: inline-grid;
+        cursor: pointer;
         max-height: @map-icon-height;
         min-height: @map-icon-height;
         max-width: @map-icon-height;
@@ -158,6 +164,7 @@ export default class FooterLayoutComponent extends Vue {
 
       @media (max-width: 768px) {
         flex-direction: column;
+        gap: 16px;
         .arrow {
           transform: rotate(90deg);
         }

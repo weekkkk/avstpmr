@@ -13,7 +13,8 @@ import {
   NEWS_PAGE,
   ONE_NEWS_PAGE,
   FLIGHT_SCHEDULE_PAGE,
-  TRANSPORTATION_RULES_PAGE
+  TRANSPORTATION_RULES_PAGE,
+  MAP_PAGE
 } from './routerNames'
 
 // Pages
@@ -26,6 +27,7 @@ import NewsPage from '@/views/pages/news-page.vue'
 import OneNewsPage from '@/views/pages/one-news-page.vue'
 import FlightSchedulePage from '@/views/pages/flight-schedule-page.vue'
 import TransportationRulesPage from '@/views/pages/transportation-rules-page.vue'
+import MapPage from '@/views/pages/map-page.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -77,6 +79,11 @@ const routes: Array<RouteRecordRaw> = [
         path: `/${TRANSPORTATION_RULES_PAGE}`,
         name: TRANSPORTATION_RULES_PAGE,
         component: TransportationRulesPage,
+      },
+      {
+        path: `/${MAP_PAGE}`,
+        name: MAP_PAGE,
+        component: MapPage,
       }
     ]
   }

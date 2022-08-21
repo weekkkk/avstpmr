@@ -139,13 +139,6 @@ export default class ContactsPageComponent extends Vue {
         Description: "Начальник подразделения<br>Кристева Елена Александровна",
       }),
       new CardSettingsModel({
-        Subtitle: "г. Бендеры",
-        Image: "",
-        Title: "Автовокзал г. Бендеры, ул.Советская, 1",
-        Links: ["+373/552/2-65-96"],
-        Description: "Начальник подразделения<br>Черная Евгения Сергеевна",
-      }),
-      new CardSettingsModel({
         Subtitle: "г. Григориополь",
         Image: "",
         Title: "Автостанция г. Григориополь, ул. Кирова, 2",
