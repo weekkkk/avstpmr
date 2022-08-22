@@ -3,7 +3,9 @@
   <div class="header" ref="header">
     <div class="container">
       <div class="left f a-c">
-        <div class="logo-box">
+        <div class="logo-box" @click="$router.push({ name: MAIN_PAGE })">
+          <img :src="Logo" alt="" />
+          <h4 class="bold">Автостанции<br />Приднестровья</h4>
           <!-- <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name">
             <h4 class="bold">Автостанции Приднестровья</h4>
           </ui-link> -->
@@ -76,6 +78,8 @@ import {
   emits: ["onMenu"],
 })
 export default class HeaderLayoutComponent extends Vue {
+  Logo = Logo;
+  MAIN_PAGE = MAIN_PAGE;
   logoLink: LinkModel = new LinkModel({
     Image: Logo,
     Name: MAIN_PAGE,
@@ -191,14 +195,30 @@ export default class HeaderLayoutComponent extends Vue {
       .logo-box {
         display: flex;
         align-items: center;
+        cursor: pointer;
         gap: 32px;
         // width: 200px;
+        img,
         .logo {
           height: 72px;
-          width: 72px;
+          // width: 72px;
         }
         p {
           line-height: 20px;
+        }
+
+        @media (max-width: 768px) {
+          gap: 16px;
+
+          img,
+          .logo {
+            height: 56px;
+          }
+
+          h4 {
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
       }
     }

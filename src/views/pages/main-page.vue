@@ -161,9 +161,9 @@ export default class MainPageComponent extends Vue {
     }
 
     @media (max-width: 768px) {
-      margin-top: -16px;
+      margin-top: -24px;
       &.absolute {
-        transform: translateY(-16px);
+        transform: translateY(-24px);
       }
     }
   }

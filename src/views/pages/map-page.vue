@@ -16,7 +16,11 @@ import { Options, Vue } from "vue-property-decorator";
 @Options({
   name: "map-page",
 })
-export default class MapPageComponent extends Vue {}
+export default class MapPageComponent extends Vue {
+  created() {
+    window.scroll(0, 0);
+  }
+}
 </script>
 
 <style lang="less" scoped>
