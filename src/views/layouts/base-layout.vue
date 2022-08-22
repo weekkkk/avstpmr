@@ -7,7 +7,9 @@
       <router-view />
     </div>
     <footer-layout v-if="!menuVisible" />
-    <menu-layout v-if="menuVisible" @onMenu="onMenu" />
+    <transition name="fade">
+      <menu-layout v-if="menuVisible" @onMenu="onMenu" />
+    </transition>
   </div>
 </template>
 
@@ -24,6 +26,17 @@ import menuLayout from "./menu-layout.vue";
 })
 export default class BaseLayoutComponent extends Vue {
   menuVisible = false;
+
+  created() {
+    window.addEventListener("resize", this.onResize);
+  }
+
+  onResize() {
+    if (window.innerWidth > 768) {
+      this.menuVisible = false;
+    }
+  }
+
   onMenu() {
     this.menuVisible = !this.menuVisible;
   }
@@ -35,6 +48,20 @@ export default class BaseLayoutComponent extends Vue {
 @container-padding-x: 32px;
 @container-padding-y: 32px;
 @header-height: 64px;
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  transition-property: transform opacity;
+  z-index: 2000;
+}
+.fade-enter-from,
+.fade-leave-to {
+  transform: scale(0);
+  opacity: 0;
+  z-index: 2000;
+}
 
 .layout {
   display: flex;

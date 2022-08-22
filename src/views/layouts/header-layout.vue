@@ -16,7 +16,7 @@
           <ui-link
             class="link p"
             v-for="(link, index) in links"
-            :key="index"
+            :key="'link' + index"
             :name="link.Name"
             :href="link.Link"
           >
@@ -30,7 +30,7 @@
             class="social link"
             v-for="(link, index) in socialLinks"
             target="black"
-            :key="index"
+            :key="'social' + index"
             :image="link.Image"
             :href="link.Link"
           >

@@ -3,7 +3,13 @@
     <div class="go-to-map">
       <div class="container">
         <div class="map f a-c j-c sh-base br-base f-w">
-          <h3 class="bold c-black align-c" style="cursor: pointer" @click="onMap">Кассы автостанций</h3>
+          <h3
+            class="bold c-black align-c"
+            style="cursor: pointer"
+            @click="onMap"
+          >
+            Кассы автостанций
+          </h3>
           <div class="arrow" style="cursor: pointer" @click="onMap">
             <svg
               width="94"
@@ -31,7 +37,7 @@
             @click="$emit('onLink')"
             class="link p c-dark-blue"
             v-for="(link, index) in links"
-            :key="index"
+            :key="'link' + index"
             :name="link.Name"
             v-html="link.Text"
           >
@@ -46,7 +52,7 @@
           3300-MD,<br />
           г. Тирасполь ул. Ленина, 59 <br />
           тел. / факс: +373(533)95753
-          <ui-link class="link p" :key="index" href="mailto:avstpmr@gmail.com">
+          <ui-link class="link p" href="mailto:avstpmr@gmail.com">
             <span class="c-white" style="text-decoration: none">
               avstpmr@gmail.com
             </span>
@@ -79,7 +85,7 @@ export default class FooterLayoutComponent extends Vue {
   created() {
     this.initLinks();
   }
-
+  
   onMap() {
     this.$router.push({ name: MAP_PAGE });
   }
