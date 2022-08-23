@@ -2,6 +2,18 @@
   <div class="page">
     <h2 class="align-l medium is-adaptive">Правила перевозок</h2>
     <div class="block">
+      <h3 class="medium is-adaptive">
+        ПРАВИТЕЛЬСТВО ПРИДНЕСТРОВСКОЙ МОЛДАВСКОЙ РЕСПУБЛИКИ ПОСТАНОВЛЕНИЕ
+      </h3>
+      <h3 class="medium is-adaptive">от 10 ноября 2016 г.</h3>
+      <h3 class="medium is-adaptive">№ 287</h3>
+      <h3 class="medium is-adaptive">
+        Об утверждении Правил организации регулярных и нерегулярных (заказных)
+        перевозок пассажиров и багажа автомобильным транспортом и городским
+        наземным электрическим транспортом
+      </h3>
+    </div>
+    <div class="block">
       <h3 class="medium is-adaptive">1. Общие положения</h3>
       <p class="regular is-adaptive align-j">
         1. Настоящие Правила разработаны в соответствии с Законом
