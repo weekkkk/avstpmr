@@ -4,8 +4,17 @@
     <div class="container f d-c">
       <div class="top f d-c a-c">
         <div class="logo-box">
-          <ui-link class="logo" :image="logoLink.Image" :name="logoLink.Name" />
-          <ui-link class="h4 bold align-c" :name="logoLink.Name">
+          <ui-link
+            class="logo"
+            @click="onMenu"
+            :image="logoLink.Image"
+            :name="logoLink.Name"
+          />
+          <ui-link
+            class="h4 bold align-c"
+            @click="onMenu"
+            :name="logoLink.Name"
+          >
             Автостанции<br />Приднестровья</ui-link
           >
         </div>
