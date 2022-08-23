@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h2 class="align-l medium is-adaptive">Кассы овтостанций</h2>
+    <h2 class="align-l medium is-adaptive">Кассы автостанций</h2>
     <iframe
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A89241564d0ccf291263788a387e915ae96d0fd59b46953b892d86441202c18f7&amp;source=constructor"
       width="100%"

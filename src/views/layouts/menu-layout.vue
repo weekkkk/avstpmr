@@ -139,14 +139,16 @@ export default class MenuLayoutComponent extends Vue {
 
   .close {
     position: absolute;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
     top: 8px;
     left: 8px;
     font-size: 32px;
     line-height: 24px;
     transform: rotate(45deg);
-    cursor: pointer;
-    user-select: none;
     color: var(--avstpmr-gray);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &:hover {
       filter: brightness(110%);

@@ -85,9 +85,10 @@ export default class FooterLayoutComponent extends Vue {
   created() {
     this.initLinks();
   }
-  
+
   onMap() {
     this.$router.push({ name: MAP_PAGE });
+    this.$emit("onLink");
   }
 
   initLinks() {
