@@ -11,10 +11,7 @@
     <div class="banner"></div>
     <div class="block">
       <h3 class="medium is-adaptive align-l">Текущее расписание рейсов</h3>
-      <ui-table
-        :customTableModel="scheduleTable"
-        class="align-l sh-base p is-adaptive"
-      />
+      <flight-shedule></flight-shedule>
     </div>
   </div>
 </template>
@@ -22,117 +19,18 @@
 <script lang="ts">
 import { Options, Vue } from "vue-property-decorator";
 import uiVideoBanner from "../components/ui-video-banner/ui-video-banner.vue";
+import FlightShedule from "./components/flight-shedule.vue";
 import TableModel from "@/views/components/ui-custom-table/models/CustomTableModel";
 import RowModel from "@/views/components/ui-custom-table/models/CustomTableRowModel";
 import CeilModel from "@/views/components/ui-custom-table/models/CustomTableCeilModel";
-
+import { Schedule } from "./vars/Schedule";
 @Options({
   name: "main-page",
-  components: { uiVideoBanner },
+  components: { uiVideoBanner, FlightShedule },
 })
 export default class MainPageComponent extends Vue {
-  scheduleTable: TableModel = new TableModel({
-    Header: new RowModel({
-      Ceils: [
-        new CeilModel({
-          Title: "Рейс",
-        }),
-        new CeilModel({
-          Title: "Отправление",
-        }),
-        new CeilModel({
-          Title: "Прибытие",
-        }),
-        new CeilModel({
-          Title: "Билетов",
-        }),
-        new CeilModel({
-          Title: "Цена",
-        }),
-      ],
-    }),
-    Body: [
-      new RowModel({
-        Ceils: [
-          new CeilModel({
-            Title: "Москва",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "10/20",
-          }),
-          new CeilModel({
-            Title: "1000 руб.",
-          }),
-        ],
-      }),
-      new RowModel({
-        Ceils: [
-          new CeilModel({
-            Title: "Москва",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "10/20",
-          }),
-          new CeilModel({
-            Title: "1000 руб.",
-          }),
-        ],
-      }),
-      new RowModel({
-        Ceils: [
-          new CeilModel({
-            Title: "Москва",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "10/20",
-          }),
-          new CeilModel({
-            Title: "1000 руб.",
-          }),
-        ],
-      }),
-      new RowModel({
-        Ceils: [
-          new CeilModel({
-            Title: "Москва",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "11:00",
-          }),
-          new CeilModel({
-            Title: "10/20",
-          }),
-          new CeilModel({
-            Title: "1000 руб.",
-          }),
-        ],
-      }),
-    ],
-  });
-  created() {
-    window.scroll(0, 0);
-  }
+ 
+
 }
 </script>
 

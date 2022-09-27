@@ -15,7 +15,9 @@ import uiListBlock from '@/views/components/ui-list-block/ui-list-block.vue'
 app.component('ui-list-block', uiListBlock)
 
 import uiCustomTable from '@/views/components/ui-custom-table/ui-custom-table.vue'
-app.component('ui-table', uiCustomTable)
+app.component('ui-custom-table', uiCustomTable)
+import uiCustomTablePagination from '@/views/components/ui-custom-table/ui-custom-table-with-pagination.vue'
+app.component('ui-table-pagination', uiCustomTablePagination)
 
 
 app.use(router).mount('#app')

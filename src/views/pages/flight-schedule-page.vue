@@ -3,10 +3,7 @@
     <h2 class="align-l medium is-adaptive">Текущее расписание рейсов</h2>
     <div class="block">
       <h3 class="medium is-adaptive align-c">Рейсы</h3>
-      <ui-table
-        :customTableModel="scheduleTable"
-        class="align-l sh-base p is-adaptive"
-      />
+      <flight-shedule></flight-shedule>
     </div>
   </div>
 </template>
@@ -16,9 +13,11 @@ import { Options, Vue } from "vue-property-decorator";
 import TableModel from "@/views/components/ui-custom-table/models/CustomTableModel";
 import RowModel from "@/views/components/ui-custom-table/models/CustomTableRowModel";
 import CeilModel from "@/views/components/ui-custom-table/models/CustomTableCeilModel";
+import FlightShedule from "./components/flight-shedule.vue";
 
 @Options({
   name: "flight-schedule-page",
+  components: { FlightShedule },
 })
 export default class FlightScheduleComponent extends Vue {
   scheduleTable: TableModel = new TableModel({

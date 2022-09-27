@@ -86,8 +86,14 @@ export default class UiCustomTableComponent extends Vue {
     display: table-row;
     > .ceil {
       display: table-cell;
+      word-break: break-word;
+      vertical-align: middle;
       // word-break: break-word;
       position: relative;
+      min-width: 100px;
+      &:first-child {
+        min-width: 90px;
+      }
 
       .arrow {
         font-size: 24px;
