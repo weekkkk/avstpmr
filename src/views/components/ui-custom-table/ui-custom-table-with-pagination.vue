@@ -11,16 +11,19 @@
         @click="page > 1 ? page-- : ''"
       >
         <!-- <i class="iconedv-Arrow-Left"></i> -->
-        {{ "<" }}
+        <!-- {{ "<" }} -->
+        Назад
       </div>
-      <div
-        class="page"
-        v-for="n in pageArr"
-        :key="n"
-        @click="page = n"
-        :class="{ current: page == n }"
-      >
-        {{ n }}
+      <div class="pages">
+        <div
+          class="page"
+          v-for="n in pageArr"
+          :key="n"
+          @click="page = n"
+          :class="{ current: page == n }"
+        >
+          {{ n }}
+        </div>
       </div>
       <div
         class="arrow next"
@@ -28,7 +31,8 @@
         @click="page < pages ? page++ : ''"
       >
         <!-- <i class="iconedv-Arrow-Right"></i> -->
-        {{ ">" }}
+        <!-- {{ ">" }} -->
+        Вперед
       </div>
     </div>
   </div>
@@ -62,16 +66,18 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
 
   get pages() {
     const countRows = this.customTableModel.Body.length;
-    const offset = this.page * this.limit - this.limit;
+    // const offset = this.page * this.limit - this.limit;
     return Math.ceil(countRows / this.limit);
   }
   get pageArr() {
-    const countRows = this.customTableModel.Body.length;
-    const offset = this.page * this.limit - this.limit;
-    const count = Math.ceil(countRows / this.limit);
+    // const countRows = this.customTableModel.Body.length;
+    // const offset = this.page * this.limit - this.limit;
+    // const count = Math.ceil(countRows / this.limit);
     const pages = [];
     for (let i = -5; i < 5; i++) {
-      if (this.page + i < this.pages && this.page + i > 0) pages.push(this.page + i);
+      if (this.page + i < this.pages && this.page + i > 0)
+        pages.push(this.page + i);
+      // else if (this.page + i <= 0) pages.push(this.page + Math.abs(i));
     }
     return pages;
   }
@@ -91,12 +97,19 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 
   .pagination {
     display: flex;
     flex-flow: wrap;
-    margin: -4px;
+    gap: 12px;
+    .pages {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      min-width: 392px;
+    }
 
     .page,
     .arrow {
@@ -108,7 +121,6 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
       justify-content: center;
       background-color: @gray_1;
       border-radius: 8px;
-      margin: 4px;
       color: @gray_3;
       cursor: pointer;
       transition: 0.15s;
@@ -129,9 +141,12 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
       }
 
       &.no-active {
-        opacity: 0.75;
+        opacity: 0.5;
         cursor: not-allowed;
       }
+    }
+    .arrow {
+      min-width: 124px;
     }
   }
 }

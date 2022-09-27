@@ -20,10 +20,6 @@
 import { Options, Vue } from "vue-property-decorator";
 import uiVideoBanner from "../components/ui-video-banner/ui-video-banner.vue";
 import FlightShedule from "./components/flight-shedule.vue";
-import TableModel from "@/views/components/ui-custom-table/models/CustomTableModel";
-import RowModel from "@/views/components/ui-custom-table/models/CustomTableRowModel";
-import CeilModel from "@/views/components/ui-custom-table/models/CustomTableCeilModel";
-import { Schedule } from "./vars/Schedule";
 @Options({
   name: "main-page",
   components: { uiVideoBanner, FlightShedule },

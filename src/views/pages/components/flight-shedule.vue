@@ -29,7 +29,7 @@ export default class FlightSheduleComponent extends Vue {
   }
   setScheduleTable() {
     this.scheduleTable.Header.Ceils = Schedule["#value"].column.map(
-      (col: any) => {
+      (col: { Title: string }) => {
         return new CeilModel({
           Title: col.Title.replace(/([А-ЯЁ])/g, " $1"),
         });
@@ -41,9 +41,9 @@ export default class FlightSheduleComponent extends Vue {
       })
     );
     this.scheduleTable.Body = Schedule["#value"].row.map(
-      (row: any, index: number) => {
+      (row: Array<object>, index: number) => {
         const r = new RowModel({
-          Ceils: row.map((ceil: any, i: number) => {
+          Ceils: row.map((ceil: { "#type": string, "#value": string }, i: number) => {
             return new CeilModel({
               Title:
                 ceil["#type"] == "jxs:dateTime"
