@@ -121,6 +121,13 @@ export default class ContactsPageComponent extends Vue {
         Subtitle: "Федотова Ольга Викторовна",
         Links: ["+373/533/8-01-18"],
         Title: "Отдел кадрового и документационного обеспечения",
+      }),
+      new CardSettingsModel({
+        Description: "Начальник СЭБиОП",
+        Image: "",
+        Subtitle: "Агинский Евгений Валерьевич",
+        Links: ["+373/533/8-46-77"],
+        Title: "Служба экономической безопасности и охраны предприятия",
       })
     );
     this.employeesСards = this.employeesСards.map((card) => {
@@ -213,7 +220,7 @@ export default class ContactsPageComponent extends Vue {
         Title:
           'Диспетчерско-кассовый пункт "Днестровск" г. Днестровск, ул.Котовского, 4',
         Links: ["+373/219/3-13-35"],
-        Description: "Кристева Елена Александровна",
+        Description: "Начальник подразделения<br>Кристева Елена Александровна",
       }),
       new CardSettingsModel({
         Subtitle: "пос. Первомайск",
@@ -221,21 +228,21 @@ export default class ContactsPageComponent extends Vue {
         Title:
           'Диспетчерско-кассовый пункт "Первомайск" пос. Первомайск ул.Ленина, 105 «а»',
         Links: ["+373/557/3-50-39"],
-        Description: "Кристева Елена Александровна",
+        Description: "Начальник подразделения<br>Кристева Елена Александровна",
       }),
       new CardSettingsModel({
         Subtitle: "г. Григориополь",
         Image: "",
         Title: "Диспетчерско-кассовый пункт г. Григориополь ул. Кирова,б/н",
         Links: ["+373/210/3-57-36"],
-        Description: "Куксанова Инна Михайловна",
+        Description: "Начальник подразделения<br>Куксанова Инна Михайловна",
       }),
       new CardSettingsModel({
         Subtitle: "г. Дубоссары",
         Image: "",
         Title: "Диспетчерско-кассовый пункт г. Дубоссары, ул. Ленина, 80 «б»",
         Links: ["0/779/5-84-28"],
-        Description: "Руссу Яна Яковлевна",
+        Description: "Начальник подразделения<br>Руссу Яна Яковлевна",
       })
     );
   }

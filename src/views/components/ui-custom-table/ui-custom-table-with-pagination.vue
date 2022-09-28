@@ -17,7 +17,7 @@
       <div class="pages">
         <div
           class="page"
-          v-for="n in pageArr"
+          v-for="n in pages"
           :key="n"
           @click="page = n"
           :class="{ current: page == n }"
@@ -102,10 +102,11 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
 
   .pagination {
     display: flex;
-    flex-flow: wrap;
     gap: 12px;
     .pages {
       display: flex;
+      flex-flow: wrap;
+      width: 100%;
       justify-content: center;
       gap: 8px;
       min-width: 392px;
@@ -144,6 +145,9 @@ export default class UiCustomTableWithPaginationComponent extends Vue {
         opacity: 0.5;
         cursor: not-allowed;
       }
+    }
+    .page {
+      border-radius: 50%;
     }
     .arrow {
       min-width: 124px;

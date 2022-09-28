@@ -23,8 +23,8 @@
           :count-visible-options="5"
         />
       </span>
-      <tir-button @click="onSearch" color="blue" class="search-button"
-        >Поиск</tir-button
+      <ui-button @click="onSearch" color="dark-blue" class="search-button"
+        >Поиск</ui-button
       >
     </div>
     <ui-table-pagination

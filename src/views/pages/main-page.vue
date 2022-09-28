@@ -46,7 +46,7 @@ export default class MainPageComponent extends Vue {
 
     &.absolute {
       position: absolute;
-      max-width: 1920px;
+      // max-width: 1920px;
       width: 100%;
       left: 0;
       right: 0;
