@@ -4,7 +4,7 @@
   <!-- </div> -->
 </template>
 
-<style>
+<style lang="less">
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 @import "@/assets/styles/vars.less";
@@ -15,6 +15,8 @@
 @import "@/assets/styles/shadow.less";
 @import "@/assets/styles/color.less";
 @import "@/assets/styles/indent.less";
+@import "@/assets/fonts/edvibe/style.css";
+@import "@/assets/styles/vars/index.less";
 html {
   color: var(--avstpmr-black);
 }
