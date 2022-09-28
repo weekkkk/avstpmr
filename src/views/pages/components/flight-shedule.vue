@@ -43,13 +43,13 @@ export default class FlightSheduleComponent extends Vue {
     this.scheduleTable.Body = Schedule["#value"].row.map(
       (row: Array<object>, index: number) => {
         const r = new RowModel({
-          Ceils: row.map((ceil: { "#type": string, "#value": string }, i: number) => {
+          Ceils: row.map((ceil: any, i: number) => {
             return new CeilModel({
               Title:
                 ceil["#type"] == "jxs:dateTime"
                   ? i == 0 || i == 1
-                    ? new Date(ceil["#value"]).toLocaleTimeString().slice(0, 5)
-                    : new Date(ceil["#value"]).toLocaleDateString().slice(0, 5)
+                    ? new Date(ceil["#value"]).toLocaleTimeString().slice(0, 4)
+                    : new Date(ceil["#value"]).toLocaleDateString()
                   : this.getValue(ceil["#value"]),
             });
           }),
